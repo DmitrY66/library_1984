@@ -46,7 +46,7 @@ const path = {
     base: 'src/',
     html: 'src/*.html',
     scss: 'src/scss/**/*.scss',
-    js: 'src/js/index.js',
+    js: 'src/js/index.min.js',
     img: 'src/img/**/*.{jpg,svg,jpeg,png,gif}',
     imgF: 'src/img/**/*.{jpg,jpeg,png}',
     assets: ['src/fonts/**/*.*', 'src/icons/**/*.*'],
@@ -104,7 +104,7 @@ const configWebpack = {
     minimize: false,
   },
   output: {
-    filename: 'index.js'
+    filename: 'index.min.js'
   },
   module: {
     rules: []
@@ -207,7 +207,7 @@ export const server = () => {
 };
 
 
-const clear = () => del(path.dist.base, {
+export const clear = () => del(path.dist.base, {
   force: true,
 });
 

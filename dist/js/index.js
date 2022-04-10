@@ -83,9 +83,6 @@ addBtns.forEach(function (btn) {
     router.navigate('add');
   });
 });
-backBtn.addEventListener('click', function () {
-  router.navigate('/');
-});
 }();
 /******/ })()
 ;

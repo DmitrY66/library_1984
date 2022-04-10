@@ -46,7 +46,7 @@ const path = {
     base: 'src/',
     html: 'src/*.html',
     scss: 'src/scss/**/*.scss',
-    js: 'src/js/index.min.js',
+    js: 'src/js/index.js',
     img: 'src/img/**/*.{jpg,svg,jpeg,png,gif}',
     imgF: 'src/img/**/*.{jpg,jpeg,png}',
     assets: ['src/fonts/**/*.*', 'src/icons/**/*.*'],
@@ -57,7 +57,6 @@ const path = {
     css: 'dist/css/',
     js: 'dist/js/',
     img: 'dist/img/',
-
   },
   watch: {
     html: 'src/*.html',
@@ -104,7 +103,7 @@ const configWebpack = {
     minimize: false,
   },
   output: {
-    filename: 'index.min.js'
+    filename: 'index.js'
   },
   module: {
     rules: []
@@ -178,7 +177,7 @@ export const avif = () => gulp
 
 export const copy = () => gulp
   .src(path.src.assets, {
-    base: path.dist.base,
+    base: path.src.base,
   })
   .pipe(gulp.dest(path.dist.base))
   .pipe(browserSync.stream({

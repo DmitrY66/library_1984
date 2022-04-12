@@ -5,8 +5,21 @@
 
   }
 
-  &__book__container {
-    width: 320px;
+  &__container {
+
+    @include laptop {
+      width: calc(100% - 120px);
+      margin-left: 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      flex: 249px auto;
+    }
+    @include desktop {
+      width: 100%;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__wrapper {
@@ -15,11 +28,29 @@
 
   &__mage {
     width: 168px;
-    height: 250px;
-    margin-top: 32px;
+    height: auto;
+    margin-top: 16px;
     margin-left: 50%;
     transform: translateX(-50%);
     border-radius: 6px;
+
+    @include tablet {
+      width: 300px;
+      margin-top: 23px;
+    }
+
+    @include laptop {
+      width: 249px;
+      margin-top: 0;
+      margin-left: 0;
+      transform: none;
+
+    }
+
+    @include desktop {
+      margin-top: 36px;
+    }
+
   }
 
   &__label {
@@ -32,10 +63,28 @@
     text-align: center;
     color: $dark;
     margin-top: 26px;
+
+  }
+
+  &__wrapper-label {
+    display: none;
+
+    @include laptop {
+      display: block;
+      width: 249px;
+      height: 50px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      text-align: center;
+      color: $dark;
+      margin-top: 20px;
+    }
   }
 
   &__content {
-
+    color: $light;
   }
 
   &__title {
@@ -44,6 +93,19 @@
     line-height: 32px;
     color: $light;
     margin-top: 20px;
+
+    @include laptop {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 49px;
+    }
+    @include desktop {
+      margin-top: 40px;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 49px;
+    }
   }
 
   &__author {
@@ -52,6 +114,12 @@
     line-height: 120%;
     color: $secondary;
     margin-top: 4px;
+
+    @include laptop {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 120%;
+    }
   }
 
   &__rating {
@@ -61,8 +129,8 @@
 
   &__rating-star {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 36px;
+    height: 36px;
     margin-right: 1px;
 
     &:last-child {
@@ -76,6 +144,12 @@
     line-height: 130%;
     color: $light;
     margin-top: 15px;
+
+    @include laptop{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+    }
   }
 
   &__description {
@@ -83,8 +157,15 @@
     font-size: 12px;
     line-height: 130%;
     color: $light;
+    text-align: justify;
     margin-top: 4px;
     overflow: hidden;
+
+    @include laptop {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
   }
 }
 
@@ -97,5 +178,9 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(to top, $dark 60%, #0000000a 100%);
+
+  @include laptop {
+    display: none;
+  }
 }
 

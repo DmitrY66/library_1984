@@ -1,7 +1,7 @@
 html {
   position: relative;
   box-sizing: border-box;
-  min-width: 360px;
+  min-width: 320px;
 }
 
 *,
@@ -33,6 +33,9 @@ img {
   height: auto;
 }
 
+input, button, textarea {
+  font: inherit;
+}
 
 button {
   padding: 0;
@@ -91,6 +94,13 @@ iframe {
   max-width: 1100px;
   padding: 0 20px;
   margin: 0 auto;
+
+  @include tablet {
+    padding: 0 35px;
+  }
+  @include laptop {
+    padding: 0 45px;
+  }
 }
 
 /*
@@ -98,6 +108,10 @@ iframe {
 это половина от расстояния между блоками
 */
 
-.hidden{
+.hidden {
   display: none;
+}
+
+section {
+  padding-bottom: 88px;
 }

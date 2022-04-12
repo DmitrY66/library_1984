@@ -9,7 +9,23 @@ $primaryDark: #6b6b6b;
 $secondary: #eaeaea;
 $secondaryDark: #aeaaaa;
 
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
 
+@mixin laptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
 
 @mixin font($name, $weight) {
 

@@ -1,13 +1,9 @@
 .search {
   $height: 40px;
   $top: 8px;
-  width: 320px;
-
-  //transform: translateX(-50%);
-  position: absolute;
+  left: 0;
   right: 0;
-  //left: 30%;
-  //transform: translateX(-50%);
+  position: absolute;
   top: -$top - $height;
   transition: transform .3s ease-in-out;
 
@@ -15,9 +11,26 @@
     transform: translateY($top * 2 + $height);
   }
 
+  &__container {
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
 
   &__form {
+    margin-left: calc(100% - 315px);
     position: relative;
+    width: 320px;
+
+    @include tablet {
+      width: 462px;
+      margin-left: calc(100% - 472px);
+    }
+
+    @include laptop {
+      width: 580px;
+      margin-left: calc(100% - 590px);
+    }
   }
 
   &__input {
@@ -29,6 +42,7 @@
     outline: 1px solid transparent;
     outline-offset: -1px;
     border: 0;
+
     &:focus {
       outline-color: $secondaryDark;
     }
@@ -44,13 +58,5 @@
     border: 0;
     width: 24px;
     height: 24px;
-  }
-
-  @include tablet {
-    width: 462px;
-  }
-  @include laptop {
-    width: 580px;
-    left: 44%;
   }
 }

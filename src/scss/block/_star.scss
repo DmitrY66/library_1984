@@ -9,7 +9,7 @@
   &__icon {
     width: 36px;
     height: 36px;
-    background-image: url("../../img/star-o.svg");
+    background-image: url("../img/star-o.svg");
     background-repeat: no-repeat;
     background-size: 36px;
     background-position: center;
@@ -26,7 +26,7 @@
   &__icon:hover,
   &__icon:hover ~ &__icon,
   &__radio:checked ~ &__icon {
-    background-image: url("../../img/star.svg");
+    background-image: url("../img/star.svg");
   }
 
 }
